@@ -1,17 +1,22 @@
 // const createGraphData = () => {
 const getWeekAgo = [];
-const test = [];
+const week = [];
+const day = [];
 const today = new Date();
 for (let i = 0; i < 7; i++) {
-  test[i] = today.getMonth() + 1 + "月" + today.getDate() + "日";
-  const info = today.setDate(today.getDate() - 1);
+  week[i] = today.getMonth() + 1 + "月" + today.getDate() + "日";
+  today.setDate(today.getDate() - 1);
+  day[i] = today.getDay();
   getWeekAgo.push({
-    label: test,
+    label: week[i],
+    id: day[i],
     figure: 0,
   });
 }
 
 console.log(...getWeekAgo);
+
+
 
 // const test = getWeekAgo.map((el) => {
 
